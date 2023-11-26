@@ -1,13 +1,23 @@
 "use client"
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Menu, X } from 'lucide-react'
-import Image from 'next/image'
-import { cn } from '@/lib/utils'
-import { UserButton } from "@clerk/nextjs";
+
+import { useEffect } from 'react'
+
+import { Modal } from '@/components/ui/modal'
+import { useStoreModal } from '@/hooks/use-store-modal'
+import { UserButton } from "@clerk/nextjs"
 
 export default function Home() {
+  const isOpen = useStoreModal((state) => state.isOpen)
+  const onOpen = useStoreModal((state) => state.onOpen)
+
+  useEffect(() => {
+    if (!isOpen) onOpen()
+  }, [])
+
   return (
-    <UserButton afterSignOutUrl="/"/>
+    <div className='p-4'>
+      ayo watch this
+      <UserButton afterSignOutUrl="/" />
+    </div>
   )
 }

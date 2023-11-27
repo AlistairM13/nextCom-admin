@@ -61,7 +61,7 @@ export async function DELETE(
 
         return NextResponse.json(store)
     } catch (error) {
-        console.log("store patch", error)
+        console.log("store delete", error)
         return new NextResponse("Internal server error", { status: 500 })
     }
 }

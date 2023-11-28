@@ -21,7 +21,7 @@ import ImageUpload from "@/components/ui/image-upload"
 
 const formSchema = z.object({
   label: z.string().min(4, "Minimum 4 characters required"),
-  imageUrl: z.string().min(1)
+  imageUrl: z.string().min(1, "Image is required")
 });
 
 type BillboardFormValues = z.infer<typeof formSchema>

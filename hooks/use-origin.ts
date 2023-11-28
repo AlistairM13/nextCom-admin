@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const useOrigin = () => {
+export const useOrigin = () => {
     const [isMounted, setIsMounted] = useState(false)
     const origin = typeof window !== "undefined" && window.location.origin ? window.location.origin : ""
     console.log(origin)
@@ -13,5 +13,3 @@ const useOrigin = () => {
 
     return origin
 }
-
-export default useOrigin

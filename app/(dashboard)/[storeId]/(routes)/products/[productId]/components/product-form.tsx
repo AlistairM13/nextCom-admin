@@ -170,7 +170,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               name="price"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Price</FormLabel>
+                  <FormLabel>Price (INR)</FormLabel>
                   <FormControl>
                     <Input type="number" disabled={loading} placeholder="9.99" {...field} />
                   </FormControl>
@@ -192,7 +192,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                     </FormControl>
                     <SelectContent>
                       {categories.map((category) => (
-                        <SelectItem key={category.id} value={category.id}>{category.name}</SelectItem>
+                        <SelectItem key={category.id} value={category.id} className="cursor-pointer">{category.name}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -214,7 +214,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                     </FormControl>
                     <SelectContent>
                       {sizes.map((size) => (
-                        <SelectItem key={size.id} value={size.id}>{size.name}</SelectItem>
+                        <SelectItem key={size.id} value={size.id} className="cursor-pointer">{size.name}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -236,7 +236,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                     </FormControl>
                     <SelectContent>
                       {colors.map((color) => (
-                        <SelectItem key={color.id} value={color.id}>{color.name}</SelectItem>
+                        <SelectItem key={color.id} value={color.id} className="cursor-pointer">{color.name}</SelectItem>
                       ))}
                     </SelectContent>
                   </Select>

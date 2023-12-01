@@ -35,6 +35,7 @@ const OrdersPage = async ({
         totalPrice: convertToCurrency.format(item.orderItems.reduce((total, item) => {
             return total + Number(item.product.price)
         }, 0)),
+        isPaid: item.isPaid,
         createdAt: format(item.createdAt, 'MMMM do, yyyy'),
     }));
 
